@@ -1,6 +1,8 @@
 <?php
 ?>
-
+<div class="blog-container" data-bind="scope: 'blog'">
+    <!-- ko template: getTemplate() --><!-- /ko -->
+</div>
 <script type="text/x-magento-init">
     {
         "*": {
@@ -8,7 +10,19 @@
                 "components": {
                     "blog": {
                         "component": "Habr_Blog/js/blog",
-                        "title2": "Hello World"
+                        "title": "Hello World",
+                        "posts": [
+                            {
+                            "id": 1,
+                            "title": "First Post",
+                            "published_date": "2020-06-14"
+                            },
+                            {
+                            "id": 2,
+                            "title": "Decond Post",
+                            "published_date": "2020-06-13"
+                            }
+                        ]
                     }
                 }
             }

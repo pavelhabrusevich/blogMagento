@@ -8,5 +8,8 @@
                 <argument name="pageTitle" xsi:type="string">Blog</argument>
             </action>
         </referenceBlock>
+        <referenceBlock name="content">
+            <block name="habr.blog.blog" class="Magento\Framework\View\Element\Template" template="Habr_Blog::blog.phtml"/>
+        </referenceBlock>
     </body>
 </page>

@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <preference for="Habr\Blog\Api\PostManagementInterface" type="Habr\Blog\Service\PostManagement"/>
+    <preference for="Habr\Blog\Api\PostRepositoryInterface" type="Habr\Blog\Service\PostRepository"/>
+    <preference for="Habr\Blog\Api\Data\PostInterface" type="Habr\Blog\Model\Post"/>
+</config>

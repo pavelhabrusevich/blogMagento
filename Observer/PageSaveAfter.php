@@ -47,6 +47,6 @@ class PageSaveAfter implements ObserverInterface
         $post->setData('publish_date', $data['publish_date']);
         $post->setData('page_id', $data['page_id']);
 
-        $this->postManagement->save();
+        $this->postManagement->save($post);
     }
 }

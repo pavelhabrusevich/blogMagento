@@ -6,4 +6,7 @@
     <event name="cms_page_load_after">
         <observer name="habr_blog_page_load_after" instance="Habr\Blog\Observer\PageLoadAfter"/>
     </event>
+    <event name="cms_page_collection_load_after">
+        <observer name="habr_blog_page_collection_load_after" instance="Habr\Blog\Observer\PageCollectionLoadAfter"/>
+    </event>
 </config>

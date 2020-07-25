@@ -55,20 +55,9 @@ class PageCollectionLoadAfter implements ObserverInterface
             $page = $collection->getItemById($post->getPageId());
             if ($page->getId()){
                 $page->setData('author', $post->getData('author'));
-                $page->setData('is_post', $post->getData('author'));
+                $page->setData('is_post', $post->getData('is_post'));
                 $page->setData('publish_date', $post->getData('publish_date'));
             }
         }
-
-
-
-//        /** @var Post $post */
-//        $post = $this->postRepository->getPageById($entity->getId());
-//
-//        if ($post->getId()){
-//            $entity->setData('author', $post->getData('author'));
-//            $entity->setData('is_post', $post->getData('author'));
-//            $entity->setData('publish_date', $post->getData('publish_date'));
-//        }
     }
 }

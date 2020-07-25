@@ -11,7 +11,9 @@
             </action>
         </referenceBlock>
         <referenceBlock name="content">
-            <block name="habr.blog.blog" class="Magento\Framework\View\Element\Template" template="Habr_Blog::blog.phtml">
+            <block name="habr.blog.blog"
+                   class="Magento\Framework\View\Element\Template"
+                   template="Habr_Blog::blog.phtml">
                 <arguments>
                     <argument name="viewModel" xsi:type="object">Habr\Blog\ViewModel\Blog</argument>
                 </arguments>

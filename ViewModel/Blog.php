@@ -4,7 +4,10 @@ declare(strict_types=1);
 namespace Habr\Blog\ViewModel;
 
 use Habr\Blog\Service\PostRepository;
+use Magento\Cms\Api\Data\PageInterface;
 use Magento\Cms\Api\Data\PageSearchResultsInterface;
+use Magento\Cms\Block\Page;
+use Magento\Framework\Exception\LocalizedException;
 use Magento\Framework\Serialize\SerializerInterface;
 use Magento\Framework\UrlInterface;
 use Magento\Framework\View\Element\Block\ArgumentInterface;
@@ -48,6 +51,7 @@ class Blog implements ArgumentInterface
 
     /**
      * @return string
+     * @throws LocalizedException
      */
     public function getPostsJson(): string
     {
@@ -64,14 +68,15 @@ class Blog implements ArgumentInterface
     {
         $result = [];
 
+        /** @var PageInterface|Page $post */
         foreach ($postsSearchResults->getItems() as $post) {
             $result[] = [
                 "id" => $post->getId(),
                 "title" => $post->getTitle(),
                 "url" => $this->url->getUrl($post->getIdentifier()),
-                "published_date" => $post->getCreationTime(),
+                "published_date" => $post->getData('publish_date'),
                 "content" => mb_substr(strip_tags($post->getContent()), 0, 255),
-                "author" => "Pavel"
+                "author" => $post->getData('author')
             ];
         }
 
